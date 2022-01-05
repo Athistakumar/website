@@ -8,6 +8,18 @@ import 'primeicons/primeicons.css'
 import 'primeflex/primeflex.css';
 
 
+/* import Vue from 'vue'
+import 'es6-promise/auto'
+Vue.config.productionTip = false;
+
+new Vue({
+  el: "#app",
+  store,
+  components: { App },
+  template: "<App/>"
+}); */
+
+
 
 const app = createApp(App)
 

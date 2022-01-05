@@ -39,12 +39,13 @@ export default {
   line-height: 18px;
   letter-spacing: 0px;
   text-align: center;
+  color: #ffffff;
 }
 .number {
   width: 30px;
   height: 30px;
   border-radius: 10px;
 
-  color: #ffffff;
+  
 }
 </style>

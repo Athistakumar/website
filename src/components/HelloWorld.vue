@@ -10,8 +10,8 @@
      </div>
      <div class="p-d-flex-Box jc-center">             <!-- box-container -->
          <div class="p-field ">
-           <h5 class="fullname">Full Name</h5>
-            <InputText id="fieldId" type="text" />
+           <h5 class="fullname" >Full Name</h5>
+            <InputText id="fieldId" type="text" v-on:click="fullname" />
           </div>
           <div>
            <h5 class="gender" >Gender</h5>
@@ -41,13 +41,13 @@
                   width: 448px;margin: 6px 17px 10px 6px;border-radius: 3px;"/>
           </div>
           <div >
-           <Button label="Next" class="btn" />
+           <Button label="Next"  v-on:click="submit" class="btn" />
           </div>
      </div>
      
   </div>
   <div class="bottom">
-       Already have an account? <span class="bottom-login">Log in</span>
+       Already have an account? <span class="bottom-login"  >Log in</span>
      </div>
   </div>
 </template>
@@ -57,6 +57,7 @@ export default {
   name: "HelloWorld",
   data() {
     return {
+      fullname:null,
       selectedCountry: null,
       selectedState: null,
 
@@ -74,6 +75,17 @@ export default {
         { name: "Karnataka", code: "KA" },
         { name: "WestBengal", code: "WB" },
       ],
+      /* vue=new Vue({
+        methods: {
+          fullname()
+          {
+            console.log(name);
+          }
+          
+        },
+      
+      }) */
+      
     };
   },
 };
@@ -229,5 +241,9 @@ export default {
 }
 .bottom-login {
   color: #ed5901;
+}
+input:hover .p-dropdown .p-dropdown-label.p-placeholder 
+{
+     background: #ed5901
 }
 </style>
