@@ -1,26 +1,21 @@
 <template>
 <div> 
-  <div class="p-d-flex p-jc-evenly p-ai-center">
-      <div class="p-row-4">
-        <span class="number">1 </span>
-        Personal Details
-        <!-- HEader -->
-      </div>
-      <div class="p-row-4"><span class="">2</span>Company Details</div>
-      <div class="p-row-4"><span class="">3</span>Email Verification</div>
-    </div>
-  <HelloWorld/>
+   <!--   <div class="p-card">
+       <Steps :model="items" :readonly="true" />
+    </div>  -->
+ <HelloWorld /> 
 </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import HelloWorld from './components/HelloWorld' 
 export default {
   name: 'App',
   components: {
-    HelloWorld
-  }
+   HelloWorld, 
+  },
+  
+
 }
 </script>
 
