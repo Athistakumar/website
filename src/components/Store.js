@@ -1,35 +1,35 @@
   /* import Vue from "vue";
-import Vuex from "vuex";
+  import Vuex from "vuex";
 
-Vue.use(Vuex);
+  Vue.use(Vuex);
 
-const state = {
-    data = [],
+  const state = {
+      data = [],
 
-};
+  };
 
-const mutations = {
-    addname(state, payload) {
-        state.data.push(payload);
-      console.log(payload);
-    }
-};
+  const mutations = {
+      addname(state, payload) {
+          state.data.push(payload);
+        console.log(payload);
+      }
+  };
 
-const actions = {
-    addName(context, namefield) {
-        context.commit("addname", namefield);
-    }
-};
+  const actions = {
+      addName(context, namefield) {
+          context.commit("addname", namefield);
+      }
+  };
 
-const getters = {
-    UserName(state) {
-        return state.data;
-    }
-};
+  const getters = {
+      UserName(state) {
+          return state.data;
+      }
+  };
 
-export default new Vuex.Store({
-    state,
-    mutations,
-    actions,
-    getters
-});   */
+  export default new Vuex.Store({
+      state,
+      mutations,
+      actions,
+      getters
+  });   */

@@ -1,62 +1,51 @@
 <template>
   <div class="squashapps">
     <div class="Template">
-      <div class="Header p-d-flex flex-colo">
         <div class="p-text-center">Add your personal details</div>
         <div class="p-text-center-Words">
           Lorem Ipsum is simply dummy text of the printing and typesetting
           industry.
         </div>
-      </div>
-      <form @submit.prevent="onSubmit">
-        <div class="p-d-flex-Box jc-center">
+      
+      
+        <div class="Box-Container p-d-flex-Box jc-center">
+          <form @submit.prevent="onSubmit">
           <!-- box-container -->
           <div
             id="name"
             class="p-field"
-            :class="{ error: v$.form.name.$errors.length }"
           >
             <h5 class="fullname">Full Name</h5>
-            <InputText id="fieldId" type="text" v-model="v$.form.name.$model" />
+            <InputText id="fieldId" type="text" v-model="name" />
             <!-- error msg of Fullname -->
-            <div
-              class="input-errors"
-              v-for="(error, index) of v$.form.name.$errors"
-              :key="index"
-            >
-              <div class="error-msg">{{ error.$message }}</div>
-            </div>
+           
           </div>
 
           <div>
             <h5 class="gender">Gender</h5>
-            <Button
+            <InputText
               label="Male"
-              type="button"
+              type="radio"
               class="Btn-1 p-ml-4 p-mr-2 p-mb-2"
             />
-            <Button label="Female" type="button" class="Btn-2 p-mr-2 p-mb-2" />
-            <Button label="Others" class="Btn-3 p-mb-2" />
+            <InputText label="Female" 
+            type="radio" class="Btn-2 p-mr-2 p-mb-2" />
+            <InputText label="Others" 
+            type="radio" class="Btn-3 p-mb-2" />
             <!-- error msg -->
           </div>
 
-          <div :class="{ error: v$.form.Country.$error.length }">
+          <div >
             <h5 class="country">Country</h5>
             <Dropdown
-              v-model="v$.form.Country.$model"
+              v-model="selectedCountry"
               :options="country"
               optionLabel="name"
               optionValue="code"
               placeholder="Select a City"
               class="County p-ml-4"
             />
-            <div
-              class="input-errors"
-              v-for="(error, index) of v$.form.Country.$error"
-              :key="index"
-            >
-              <div class="error-msg">{{ error.$message }}</div>
-            </div>
+           
           </div>
           <div>
             <h5 class="State">State</h5>
@@ -71,62 +60,57 @@
           </div>
           <div
             class="phone p-mb-4 p-fluid"
-            :class="{ error: v$.form.phone.$errors.length }"
+           
           >
             <h5 class="label p-mb-1 p-ml-3">Phone</h5>
             <div class="p-inputgroup">
               <span class="p-inputgroup-addon">+91</span>
               <InputNumber
-                v-model="v$.form.phone.$model"
+                v-model="phone"
                 id="phone"
                 type="text"
                 mode="decimal"
                 :useGrouping="false"
               />
             </div>
-            <div
-              class="input-errors"
-              v-for="(error, index) of v$.form.phone.$errors"
-              :key="index"
-            >
-              <div class="error-msg">{{ error.$message }}</div>
-            </div>
+            
           </div>
 
           <div>
             <Button
               label="Next"
-              :disabled="v$.form.$invalid"
-              on@click="submit_data()"
+             
               class="btn"
             />
           </div>
+          </form>
         </div>
-      </form>
+      
     </div>
-    <!--  <div class="bottom">
+     <div class="bottom">
        Already have an account? <span class="bottom-login"  >Log in</span>
      </div>
-  </div> -->
+
   </div>
 </template>
 
 <script>
-import useVuelidate from "@vuelidate/core";
-import { required, minLength, numeric } from "@vuelidate/validators";
+/* import useVuelidate from "@vuelidate/core";
+import { required, minLength, numeric } from "@vuelidate/validators"; */
 export default {
   name: "HelloWorld",
-  setup() {
+  /* setup() {
     return { v$: useVuelidate() };
-  },
+  }, */
   data() {
     return {
       selectedState: null,
-      form: {
+      selectedCountry:null,
+     /*  form: {
         name: "",
         Country: null,
         phone: null,
-      },
+      }, */
 
       country: [
         { name: "India", code: "IN" },
@@ -144,7 +128,7 @@ export default {
       ],
     };
   },
-  validations() {
+  /* validations() {
     return {
       form: {
         name: {
@@ -161,11 +145,11 @@ export default {
         },
       },
     };
-  },
+  }, 
 
   submit_data() {
     console.log(this.v$);
-  },
+  },*/
 };
 </script>
 
@@ -193,6 +177,7 @@ export default {
 .p-d-flex-Box {
   position: absolute;
 }
+
 .p-text-center {
   height: 43px;
   left: 438px;
@@ -222,7 +207,7 @@ export default {
   color: #0a0909;
 }
 .p-d-flex-Box {
-  width: 508px;
+  width: 36%;
   height: 585px;
   left: 386px;
   top: 198px;
@@ -233,7 +218,7 @@ export default {
 .fullname {
   height: 18px;
   margin: 6px 17px 6px 17px;
-  top: calc(50% - 18px / 2 - 24.5px);
+  
 
   font-family: Lato;
   font-style: normal;
